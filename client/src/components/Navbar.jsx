@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Moon, Sun, Hexagon } from 'lucide-react';
+import { Moon, Sun, Hexagon, LogOut } from 'lucide-react';
 import { AuthContext } from '../context/AuthContext';
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
   useEffect(() => {
@@ -38,6 +38,14 @@ const Navbar = () => {
           {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
         </button>
         
+        {/* Mobile Logout Button (Visible only on mobile devices) */}
+        <button
+          onClick={logout}
+          className="md:hidden p-2 rounded-full text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-500/10 transition-colors"
+        >
+          <LogOut className="h-5 w-5" />
+        </button>
+
         <div className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">
             {user?.name?.charAt(0).toUpperCase()}
