@@ -28,7 +28,7 @@ const Layout = () => {
         </main>
 
         {/* Premium Mobile Bottom Navigation Bar (Hidden on Desktop) */}
-        <div className="md:hidden absolute bottom-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#1c1c1f]/80 backdrop-blur-2xl border-t border-gray-200 dark:border-white/10 shadow-[0_-8px_30px_rgb(0,0,0,0.05)] dark:shadow-[0_-8px_30px_rgb(0,0,0,0.2)]">
+        <div className="md:hidden fixed bottom-0 left-0 right-0 w-full z-50 bg-white/90 dark:bg-[#121214]/90 backdrop-blur-2xl border-t border-gray-200 dark:border-white/10 shadow-[0_-8px_30px_rgb(0,0,0,0.1)] dark:shadow-[0_-8px_30px_rgb(0,0,0,0.6)]">
           <div className="flex justify-around items-center h-[72px] px-2 pb-safe">
             {links.map((link) => {
               const Icon = link.icon;
