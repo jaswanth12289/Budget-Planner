@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Moon, Sun, Menu } from 'lucide-react';
+import { Moon, Sun, Hexagon } from 'lucide-react';
 import { AuthContext } from '../context/AuthContext';
 
 const Navbar = () => {
@@ -21,13 +21,15 @@ const Navbar = () => {
   };
 
   return (
-    <header className="h-16 flex items-center justify-between border-b border-gray-200 dark:border-gray-800 bg-light-card dark:bg-dark-card px-4 md:px-6">
-      <div className="flex items-center flex-1 md:hidden">
-        <button className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
-          <Menu className="h-6 w-6" />
-        </button>
-      </div>
+    <header className="h-16 flex items-center justify-between border-b border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-[#121214]/80 backdrop-blur-xl px-4 md:px-6">
       
+      {/* Mobile Brand Logo */}
+      <div className="flex items-center gap-2 md:hidden">
+        <div className="p-1.5 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg shadow-md shadow-blue-500/20">
+          <Hexagon className="h-4 w-4 text-white" />
+        </div>
+        <h1 className="text-xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 tracking-tight">SmartBudget</h1>
+      </div>
       <div className="flex-1 flex justify-end items-center gap-4">
         <button
           onClick={toggleTheme}
